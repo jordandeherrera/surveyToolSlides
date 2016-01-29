@@ -39,12 +39,6 @@ The survey's instructions are located on the same page as the landing page for t
 
 --- .class#id
 
-## Response Validation
-
-The survey tool is automatically validated because each survey taker is invited to take the survey.  That way no one person can sway the results of the survey by just taking the survey over and over again.  The tool uses a CSV contact file and a validation code generator in order to ensure that each survey respondent only takes the survey once.
-
---- .class#id
-
 ## googleVis Package
 
 The survey tool uses the googleVis package to calculate scores for each category of question and then compares these scores to similar survey respondents based on market cap and industry.  The results are displayed to the survey respondent at the end of the survey.
@@ -53,7 +47,7 @@ The survey is located at:  [SurveyTool](http://www.verasite.net/coursera)
 
 Here is an example of what the googleVis graphs look like:
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 library(googleVis)
 ```
 
