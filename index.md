@@ -39,23 +39,17 @@ The survey's instructions are located on the same page as the landing page for t
 
 --- .class#id
 
-## googleVis Package
+## Random Validation
 
-The survey tool uses the googleVis package to calculate scores for each category of question and then compares these scores to similar survey respondents based on market cap and industry.  The results are displayed to the survey respondent at the end of the survey.
+The survey tool uses the random package to generate random validation codes for each respondent.  Below is an example of how this script works within the tool.
 
-The survey is located at:  [SurveyTool](http://www.verasite.net/coursera)
-
-Here is an example of what the googleVis graphs look like:
-
-
+If you'd like to see for yourself though, the survey is located at:  [SurveyTool](http://www.verasite.net/coursera)
 
 
 ```r
-df=data.frame(country=c("Respondent 1", "Respondent 2", "Respondent 3"), 
-              val1=c(10,13,14), 
-              val2=c(23,12,32))
-Column <- gvisColumnChart(df)
-plot(Column)
+library(random)
+x <- 1
+Validation.Code <- data.frame(Code = randomStrings(n=x, len=5), Count = rep(0,x), Name = rep("",x), Title = rep("",x), Organization = rep("",x), ResponseNo = rep(0,x))
+colnames(Validation.Code) <- c("Code","Count","Name","Title","Organization", "ResponseNo")
+View(Validation.Code)
 ```
-
-Thanks and hope you enjoy it!

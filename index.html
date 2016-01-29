@@ -90,23 +90,19 @@
 
 <slide class="class#id" id="slide-4" style="background:;">
   <hgroup>
-    <h2>googleVis Package</h2>
+    <h2>Random Validation</h2>
   </hgroup>
   <article data-timings="">
-    <p>The survey tool uses the googleVis package to calculate scores for each category of question and then compares these scores to similar survey respondents based on market cap and industry.  The results are displayed to the survey respondent at the end of the survey.</p>
+    <p>The survey tool uses the random package to generate random validation codes for each respondent.  Below is an example of how this script works within the tool.</p>
 
-<p>The survey is located at:  <a href="http://www.verasite.net/coursera">SurveyTool</a></p>
+<p>If you&#39;d like to see for yourself though, the survey is located at:  <a href="http://www.verasite.net/coursera">SurveyTool</a></p>
 
-<p>Here is an example of what the googleVis graphs look like:</p>
-
-<pre><code class="r">df=data.frame(country=c(&quot;Respondent 1&quot;, &quot;Respondent 2&quot;, &quot;Respondent 3&quot;), 
-              val1=c(10,13,14), 
-              val2=c(23,12,32))
-Column &lt;- gvisColumnChart(df)
-plot(Column)
+<pre><code class="r">library(random)
+x &lt;- 1
+Validation.Code &lt;- data.frame(Code = randomStrings(n=x, len=5), Count = rep(0,x), Name = rep(&quot;&quot;,x), Title = rep(&quot;&quot;,x), Organization = rep(&quot;&quot;,x), ResponseNo = rep(0,x))
+colnames(Validation.Code) &lt;- c(&quot;Code&quot;,&quot;Count&quot;,&quot;Name&quot;,&quot;Title&quot;,&quot;Organization&quot;, &quot;ResponseNo&quot;)
+View(Validation.Code)
 </code></pre>
-
-<p>Thanks and hope you enjoy it!</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -136,7 +132,7 @@ plot(Column)
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='googleVis Package'>
+        data-slide=4 title='Random Validation'>
          4
       </a>
     </li>
