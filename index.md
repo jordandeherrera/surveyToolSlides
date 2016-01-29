@@ -51,5 +51,10 @@ library(random)
 x <- 1
 Validation.Code <- data.frame(Code = randomStrings(n=x, len=5), Count = rep(0,x), Name = rep("",x), Title = rep("",x), Organization = rep("",x), ResponseNo = rep(0,x))
 colnames(Validation.Code) <- c("Code","Count","Name","Title","Organization", "ResponseNo")
-View(Validation.Code)
+Validation.Code
+```
+
+```
+##    Code Count Name Title Organization ResponseNo
+## 1 zX7oK     0                                  0
 ```
