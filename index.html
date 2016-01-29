@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey Tool</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Survey Tool">
+  <meta name="author" content="Jordan DeHerrera">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Survey Tool</h1>
+    <h2>A Shiny Application</h2>
+    <p>Jordan DeHerrera<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Survey Tool Overview</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The SurveyTool is designed to be an interactive survey that not only records survey respondent answers, but also provides live feedback and benchmarked results to the respondent once they are finished taking the survey:</p>
+
+<ol>
+<li>The survey respondents are incentivized to take the survey as they are only able to see their benchmarked and overall results once they have completed the survey</li>
+<li>The survey results are validated through automatically generated validation codes from R script.</li>
+<li>Survey respondents can optionally enter in their e-mail at the end of the survey and the e-mail is recorded if the respondent would like more information.  The intention is to create something that is of value to the respondent, build a database of the overall landscape and competencies in the industry, and also create a marketing tool where respondents voluntarily give their contact information.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Steps in Taking the Survey</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The basic steps in taking the survey include the following:</p>
+
+<ol>
+<li>Entering a validation code</li>
+<li>Selecting a choice for each survey question by clicking on a radio button</li>
+<li>Clicking the next button to submit answers</li>
+<li>Optionally entering an e-mail address or declining</li>
+<li>Reviewing survey results and benchmark results</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class#id" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Instructions</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The survey&#39;s instructions are located on the same page as the landing page for the survey.  The landing page and description of how to take the survey also includes a simple white paper as an attachment and downloadable link in the www directory so that the survey respondent can learn a little bit more about the company.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class#id" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Response Validation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The survey tool is automatically validated because each survey taker is invited to take the survey.  That way no one person can sway the results of the survey by just taking the survey over and over again.  The tool uses a CSV contact file and a validation code generator in order to ensure that each survey respondent only takes the survey once.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class#id" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>googleVis Package</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The survey tool uses the googleVis package to calculate scores for each category of question and then compares these scores to similar survey respondents based on market cap and industry.  The results are displayed to the survey respondent at the end of the survey.</p>
+
+<p>The survey is located at:  <a href="http://www.verasite.net/coursera">SurveyTool</a></p>
+
+<p>Here is an example of what the googleVis graphs look like:</p>
+
+<pre><code>## 
+## Welcome to googleVis version 0.5.10
+## 
+## Please read the Google API Terms of Use
+## before you start using the package:
+## https://developers.google.com/terms/
+## 
+## Note, the plot method of googleVis will by default use
+## the standard browser to display its output.
+## 
+## See the googleVis package vignettes for more details,
+## or visit http://github.com/mages/googleVis.
+## 
+## To suppress this message use:
+## suppressPackageStartupMessages(library(googleVis))
+</code></pre>
+
+<pre><code class="r">df=data.frame(country=c(&quot;Respondent 1&quot;, &quot;Respondent 2&quot;, &quot;Respondent 3&quot;), 
+              val1=c(10,13,14), 
+              val2=c(23,12,32))
+Column &lt;- gvisColumnChart(df)
+plot(Column)
+</code></pre>
+
+<p>Thanks and hope you enjoy it!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Survey Tool Overview'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Steps in Taking the Survey'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Instructions'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Response Validation'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='googleVis Package'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

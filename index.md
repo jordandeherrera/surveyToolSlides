@@ -1,0 +1,84 @@
+---
+title       : Survey Tool
+subtitle    : A Shiny Application
+author      : Jordan DeHerrera
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Survey Tool Overview
+
+The SurveyTool is designed to be an interactive survey that not only records survey respondent answers, but also provides live feedback and benchmarked results to the respondent once they are finished taking the survey:
+
+1. The survey respondents are incentivized to take the survey as they are only able to see their benchmarked and overall results once they have completed the survey
+2. The survey results are validated through automatically generated validation codes from R script.
+3. Survey respondents can optionally enter in their e-mail at the end of the survey and the e-mail is recorded if the respondent would like more information.  The intention is to create something that is of value to the respondent, build a database of the overall landscape and competencies in the industry, and also create a marketing tool where respondents voluntarily give their contact information.
+
+--- .class #id 
+
+## Steps in Taking the Survey
+
+The basic steps in taking the survey include the following:
+
+1. Entering a validation code
+2. Selecting a choice for each survey question by clicking on a radio button
+3. Clicking the next button to submit answers
+4. Optionally entering an e-mail address or declining
+5. Reviewing survey results and benchmark results
+
+--- .class#id
+
+## Instructions
+
+The survey's instructions are located on the same page as the landing page for the survey.  The landing page and description of how to take the survey also includes a simple white paper as an attachment and downloadable link in the www directory so that the survey respondent can learn a little bit more about the company.
+
+--- .class#id
+
+## Response Validation
+
+The survey tool is automatically validated because each survey taker is invited to take the survey.  That way no one person can sway the results of the survey by just taking the survey over and over again.  The tool uses a CSV contact file and a validation code generator in order to ensure that each survey respondent only takes the survey once.
+
+--- .class#id
+
+## googleVis Package
+
+The survey tool uses the googleVis package to calculate scores for each category of question and then compares these scores to similar survey respondents based on market cap and industry.  The results are displayed to the survey respondent at the end of the survey.
+
+The survey is located at:  [SurveyTool](http://www.verasite.net/coursera)
+
+Here is an example of what the googleVis graphs look like:
+
+
+```
+## 
+## Welcome to googleVis version 0.5.10
+## 
+## Please read the Google API Terms of Use
+## before you start using the package:
+## https://developers.google.com/terms/
+## 
+## Note, the plot method of googleVis will by default use
+## the standard browser to display its output.
+## 
+## See the googleVis package vignettes for more details,
+## or visit http://github.com/mages/googleVis.
+## 
+## To suppress this message use:
+## suppressPackageStartupMessages(library(googleVis))
+```
+
+
+```r
+df=data.frame(country=c("Respondent 1", "Respondent 2", "Respondent 3"), 
+              val1=c(10,13,14), 
+              val2=c(23,12,32))
+Column <- gvisColumnChart(df)
+plot(Column)
+```
+
+Thanks and hope you enjoy it!
